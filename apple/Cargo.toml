@@ -1,0 +1,23 @@
+[package]
+name = "exact-rust-app-apple"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+
+[lib]
+crate-type = ["rlib"]
+test = false
+bench = false
+
+[dependencies]
+exact-logic = { path = "../../exact/logic" }
+exact-apple = { path = "../../exact/host/apple" }
+exact-apple-update = { path = "../../exact/host/apple-update" }
+exact-rust-app-data = { path = "../data" }
+
+[build-dependencies]
+contract = { path = "../../exact/contract/cli" }
+exact-bake = { path = "../../exact/bake" }
+exact-rust-app-data = { path = "../data" }

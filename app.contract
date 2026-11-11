@@ -1,15 +1,18 @@
-// Exact Rust App: the view. app.ts answers what it asks for. Colours, fonts,
-// sizes and the safe area are left unsaid, so each platform supplies its own:
-// the header is the navigation bar, its heading the title, its button a bar item.
-shape Greeting
-  text: string
+// Exact Rust App: the view. The Rust crate in data/ answers what it asks for
+// (data/src/lib.rs): the view keeps the state, Rust picks the face and label.
+shape Face
+  emoji: string
+  label: string
 
 routes nav
   home "/"
 
 component ExactRustApp
-  resource greeting = greeting("Exact Rust App") as shape Greeting
+  state angel = true
+  resource face = faceFor(angel) as shape Face
   state liked = false
+  action toggle
+    angel = not angel
   action like
     liked = not liked
   view
@@ -20,5 +23,8 @@ component ExactRustApp
             text "Exact Rust App" role="heading" aria-level=1 flex=1
             button press=like aria-label=(liked ? "Unlike" : "Like") testId="like"
               image (liked ? "symbol:heart-fill" : "symbol:heart")
-          scroll id="content" flex=1 min-height=0 padding=16
-            text greeting.text testId="greeting"
+          scroll id="content" flex=1 min-height=0 padding=24
+            column gap=16 align-items="center"
+              text face.emoji font-size="6rem" testId="face"
+              button press=toggle testId="toggle"
+                text face.label testId="toggle-label"

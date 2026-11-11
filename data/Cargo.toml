@@ -1,0 +1,15 @@
+[package]
+name = "exact-rust-app-data"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Exact Rust App's data source, in Rust"
+publish = false
+
+[lib]
+name = "exact_rust_app_data"
+crate-type = ["rlib"]
+
+[dependencies]
+exact-plan = { path = "../../exact/plan" }
+exact-runner = { path = "../../exact/runner" }

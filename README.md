@@ -203,7 +203,9 @@ exact-plan = { path = "<exact へのパス>/plan" }
 exact-runner = { path = "<exact へのパス>/runner" }
 ```
 
-### アプリに Rust クレートをつなぐ(要確認)
+### アプリに Rust クレートをつなぐ
+
+> このリポジトリで実装済みです(`data/`、`web/`、`apple/`)。`bun exact.mjs verify` は clean、`cargo test -p exact-rust-app-data` も通ります。`web/build.rs` は `exact/apps/geofence-fixture/web/build.rs` を、`apple/build.rs` は `exact/apps/hello/apple/build.rs` を手本にしました。`app.ts` は不要になったので削除しています。
 
 `exact new` で作ったアプリには Rust のクレートがありません(ビルド用のクレートは `.exact/shells/` に自動生成されます)。自分の Rust を足すには、そのワークスペースをアプリ直下にコピーして自分のものにします。この手順はリポジトリの `docs/recipes/gpu-module.md` が GPU モジュール向けに書いているもので、データクレートでも同じ方式です。
 
