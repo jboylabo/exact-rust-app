@@ -1,6 +1,15 @@
-test "the greeting loads"
+test "Rust answers the angel first"
   expect tree has "root"
-  expect text "greeting" == "Hello from Exact Rust App."
+  expect text "face" == "😇"
+  expect text "toggle-label" == "太陽にする"
+
+test "the button flips angel and sun"
+  tap "toggle"
+  expect state angel == false
+  expect text "face" == "☀️"
+  expect text "toggle-label" == "天使にする"
+  tap "toggle"
+  expect text "face" == "😇"
 
 test "the header's button likes it"
   tap "like"

@@ -12,14 +12,14 @@ name (none: the card); `bun exact.mjs docs <heading words>` a guide's
 section. Run `bun exact.mjs verify` when the features work, and `verify ios|android` at the end for a
 phone app. When an iPhone app is ready for the person to try, run `bun exact.mjs share` and give
 them the link it prints; run it again after each change they should see. `bun exact.mjs help` lists the verbs, and your own in app.json `"commands"`.
-`bun exact.mjs update` refreshes files. A native verb (`ios`, `mac`, `linux`, `android`,
-`windows`) names its platform in app.json the first time it runs and builds it in a generated
-workspace; `update --without <platform>` stops it.
+`bun exact.mjs update` refreshes files. `bun exact.mjs lock` repairs Cargo lock drift.
+`bun exact.mjs update --without linux` stops shipping Linux.
 `bun ../exact/scripts/exact.mjs setup --check` names what a native build lacks.
 Shared data: `exact new <path> --snapback`, or `bun exact.mjs snapback` here.
 Install `snapback4@0.4.33` above; ../exact/snapback4/README.md has setup and server commands.
 
-Generated, so don't edit: `exact.mjs` and this block.
+Generated, so don't edit: `exact.mjs`, `rust-toolchain.toml`, `.cargo/config.toml`,
+`Cargo.toml`'s `[patch.crates-io]` and this block.
 
 ## Feedback (required)
 

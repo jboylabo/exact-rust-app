@@ -1,0 +1,17 @@
+# Exact Rust App's native workspace: copied up from the generated one (docs/recipes/gpu-module.md)
+# so the app can carry Rust of its own, the `data` crate that answers the view's sources.
+[workspace]
+members = ["web", "apple", "data"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[patch.crates-io]
+accesskit_windows = { path = "../exact/vendor/accesskit-windows" }
+taffy = { path = "../exact/vendor/taffy" }
+parley = { path = "../exact/vendor/parley" }
+fontique = { path = "../exact/vendor/fontique" }
+wgpu-hal = { path = "../exact/vendor/wgpu-hal" }
