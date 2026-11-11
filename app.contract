@@ -1,5 +1,6 @@
 // Exact Rust App: the view. The Rust crate in data/ answers what it asks for
 // (data/src/lib.rs): the view keeps the state, Rust picks the face and label.
+// The macaron is the GPU module's (gpu/): a canvas drawn in Rust with wgpu.
 shape Face
   emoji: string
   label: string
@@ -25,6 +26,8 @@ component ExactRustApp
               image (liked ? "symbol:heart-fill" : "symbol:heart")
           scroll id="content" flex=1 min-height=0 padding=24
             column gap=16 align-items="center"
+              column width="100%" border-radius=24 overflow="hidden"
+                canvas surface=macaron() width="100%" height=320 aria-label="紫のマカロン" testId="macaron"
               text face.emoji font-size="6rem" testId="face"
               button press=toggle testId="toggle"
                 text face.label testId="toggle-label"

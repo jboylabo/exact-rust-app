@@ -1,5 +1,6 @@
 test "Rust answers the angel first"
   expect tree has "root"
+  expect tree has "macaron"
   expect text "face" == "😇"
   expect text "toggle-label" == "太陽にする"
 

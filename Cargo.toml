@@ -1,7 +1,7 @@
 # Exact Rust App's native workspace: copied up from the generated one (docs/recipes/gpu-module.md)
 # so the app can carry Rust of its own, the `data` crate that answers the view's sources.
 [workspace]
-members = ["web", "apple", "data"]
+members = ["web", "apple", "data", "gpu"]
 resolver = "2"
 
 [workspace.package]
