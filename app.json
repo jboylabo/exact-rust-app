@@ -1,0 +1,28 @@
+{
+  "$schema": "../exact/scripts/app.schema.json",
+  "name": "Exact Rust App",
+  "short_name": "Exact Rust App",
+  "id": "com.example.exact-rust-app-2d7a17",
+  "start_url": "/",
+  "display": "standalone",
+  "app": {
+    "id": "com.example.exact-rust-app-2d7a17",
+    "name": "Exact Rust App"
+  },
+  "host": {
+    "web": {},
+    "ios": {
+      "minimumOS": "17.0",
+      "deviceFamily": [
+        "iphone",
+        "ipad"
+      ]
+    }
+  },
+  "deploy": {
+    "store": {
+      "web": "0",
+      "ios": "0"
+    }
+  }
+}
